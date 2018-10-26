@@ -8,7 +8,7 @@ pids
 *.seed
 
 # Compiled files for DEV
-dist
+# dist
 
 # Dependency directory
 node_modules
