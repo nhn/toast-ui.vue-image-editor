@@ -1,11 +1,14 @@
 <template>
-    <div class="imageEditorApp">
-        <tui-image-editor ref="tuiImageEditor"
-                          :include-ui="useDefaultUI"
-                          :options="options"
-                          @addText="onAddText"
-                          @objectMoved="onObjectMoved">
-        </tui-image-editor>
+    <div>
+        <h1>🍞🎨 TOAST UI Image Editor + Vue</h1>
+        <div class="imageEditorApp">
+            <tui-image-editor ref="tuiImageEditor"
+                              :include-ui="useDefaultUI"
+                              :options="options"
+                              @addText="onAddText"
+                              @objectMoved="onObjectMoved">
+            </tui-image-editor>
+        </div>
     </div>
 </template>
 <script>
