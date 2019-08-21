@@ -36,11 +36,6 @@ export default {
             }
         }
     },
-    data() {
-        return {
-            editorInstance: null
-        };
-    },
     mounted() {
         let options = editorDefaultOptions;
         if (this.includeUi) {
