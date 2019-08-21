@@ -28,16 +28,14 @@ export default {
     components: {
         'tui-image-editor': ImageEditor
     },
-    data() {
-        return {
-            useDefaultUI: true,
-            options: {
-                includeUI: {
-                    initMenu: 'filter'
-                },
-                cssMaxWidth: 700,
-                cssMaxHeight: 500
-            }
+    created() {
+        this.useDefaultUI = true;
+        this.options = {
+          includeUI: {
+            initMenu: 'filter'
+          },
+          cssMaxWidth: 700,
+          cssMaxHeight: 500
         };
     },
     methods: {

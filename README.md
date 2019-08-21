@@ -111,14 +111,12 @@ export default {
     components: {
         'tui-image-editor': ImageEditor
     },
-    data() {
-        return {
-            useDefaultUI: true,
-            options: { // for options prop
-                cssMaxWidth: 700,
-                cssMaxHeight: 500
-            }
-        }
+    created() {
+        this.useDefaultUI = true;
+        this.options = { // for tui-image-editor component's "options" prop
+            cssMaxWidth: 700,
+            cssMaxHeight: 500
+        };
     }
 }
 ```
