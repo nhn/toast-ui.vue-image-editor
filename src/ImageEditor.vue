@@ -45,13 +45,19 @@ export default {
         this.addEventListener();
     },
     destroyed() {
-        editorEvents.forEach(eventName => this.editorInstance.off(eventName));
+        Object.keys(this.$listeners).forEach(eventName => {
+            if (editorEvents.includes(eventName)) {
+                this.editorInstance.off(eventName);
+            }
+        });
         this.editorInstance.destroy();
     },
     methods: {
         addEventListener() {
-            editorEvents.forEach(eventName => {
-                this.editorInstance.on(eventName, (...args) => this.$emit(eventName, ...args));
+            Object.keys(this.$listeners).forEach(eventName => {
+                if (editorEvents.includes(eventName)) {
+                    this.editorInstance.on(eventName, (...args) => this.$emit(eventName, ...args));
+                }
             });
         },
         getRootElement() {
