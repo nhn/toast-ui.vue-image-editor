@@ -3,16 +3,7 @@
 </template>
 <script>
 import ImageEditor from 'tui-image-editor';
-const editorEvents = [
-    'addText',
-    'mousedown',
-    'objectActivated',
-    'objectMoved',
-    'objectScaled',
-    'redoStackChanged',
-    'textEditing',
-    'undoStackChanged'
-];
+
 const includeUIOptions = {
     includeUI: {
         initMenu: 'filter'
@@ -46,18 +37,15 @@ export default {
     },
     destroyed() {
         Object.keys(this.$listeners).forEach(eventName => {
-            if (editorEvents.includes(eventName)) {
-                this.editorInstance.off(eventName);
-            }
+            this.editorInstance.off(eventName);
         });
         this.editorInstance.destroy();
+        this.editorInstance = null;
     },
     methods: {
         addEventListener() {
             Object.keys(this.$listeners).forEach(eventName => {
-                if (editorEvents.includes(eventName)) {
-                    this.editorInstance.on(eventName, (...args) => this.$emit(eventName, ...args));
-                }
+                this.editorInstance.on(eventName, (...args) => this.$emit(eventName, ...args));
             });
         },
         getRootElement() {
