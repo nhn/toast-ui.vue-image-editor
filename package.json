@@ -10,8 +10,7 @@
   "scripts": {
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "serve": "vue serve ./example/App.vue",
-    "postinstall": "npm install --no-save --no-optional fabric@^3.3.2"
+    "serve": "vue serve ./example/App.vue"
   },
   "homepage": "https://github.com/nhn/toast-ui.vue-image-editor",
   "bugs": "https://github.com/nhn/toast-ui.vue-image-editor/issues",
