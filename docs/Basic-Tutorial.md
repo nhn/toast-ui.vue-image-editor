@@ -166,7 +166,7 @@ import 'tui-image-editor/dist/svg/icon-d.svg';
 
 // Load Style Code
 import 'tui-image-editor/dist/tui-image-editor.css';
-
+import 'tui-color-picker/dist/tui-color-picker.css';
 import {ImageEditor} from '@toast-ui/vue-image-editor';
 ```
 
